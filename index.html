@@ -15,19 +15,40 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:28px;
+  padding:12px 28px 28px;
   text-align:center;
 }
 .wrap{
   max-width:900px;
   width:100%;
-  animation:fadeIn .8s ease both;
+  transform:translateY(-25px);
+}
+.logo-wrap{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  margin-bottom:18px;
 }
 .logo{
-  width:min(520px,92vw);
+  width:min(570px,88vw);
   display:block;
-  margin:0 auto 26px;
+  margin:0 auto;
   mix-blend-mode:multiply;
+}
+.logo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    110deg,
+    transparent 38%,
+    rgba(255,255,255,.32) 50%,
+    transparent 62%
+  );
+  transform:translateX(-180%);
+  animation:shine 9s infinite;
+  pointer-events:none;
+  mix-blend-mode:screen;
 }
 .small{
   color:#7b5a30;
@@ -76,6 +97,11 @@ a.btn{
   font-size:.76rem;
   font-weight:800;
   background:rgba(255,255,255,.25);
+  transition:.25s;
+}
+a.btn:hover{
+  background:#9d7741;
+  color:white;
 }
 .email{
   color:#6f6860;
@@ -93,13 +119,15 @@ footer{
   font-size:.72rem;
   line-height:1.6;
 }
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
+@keyframes shine{
+  0%,84%{transform:translateX(-180%);opacity:0}
+  88%{opacity:1}
+  100%{transform:translateX(180%);opacity:0}
 }
 @media(max-width:560px){
-  body{padding:20px}
-  .logo{width:94vw}
+  body{padding:10px 20px 24px}
+  .wrap{transform:translateY(-15px)}
+  .logo{width:88vw}
   h1{letter-spacing:.1em}
   .small,.tagline{letter-spacing:.16em}
   a.btn{width:100%}
@@ -108,7 +136,9 @@ footer{
 </head>
 <body>
 <main class="wrap">
-  <img src="logo.png" alt="Pokémon Trading Centre logo" class="logo">
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Pokémon Trading Centre logo" class="logo">
+  </div>
   <div class="small">Premium Pokémon Collecting</div>
   <h1>COMING SOON</h1>
   <p>
