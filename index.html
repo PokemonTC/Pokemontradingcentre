@@ -3,17 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Pokémon Trading Centre | Coming Soon</title>
 <meta name="description" content="Pokémon Trading Centre is coming soon. A premium destination for Pokémon collectors to buy, sell, trade and join the community.">
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   min-height:100vh;
   font-family:Arial,Helvetica,sans-serif;
-  background:radial-gradient(circle at top,#fffaf4 0%,#f4f0ea 55%,#e8dfd4 100%);
+  background:#f4f0ea;
   color:#111;
   display:flex;
   justify-content:center;
@@ -21,68 +18,38 @@ body{
   padding:28px;
   text-align:center;
 }
-
 .wrap{
   max-width:900px;
   width:100%;
-  animation:fadeIn 1.4s ease both;
+  animation:fadeIn .8s ease both;
 }
-
-.logo-box{
-  position:relative;
-  display:inline-block;
-  overflow:hidden;
-  animation:float 6s ease-in-out infinite;
-}
-
 .logo{
-  width:min(500px,90vw);
+  width:min(520px,92vw);
   display:block;
+  margin:0 auto 26px;
   mix-blend-mode:multiply;
 }
-
-.logo-box::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-120%;
-  width:60%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.7),transparent);
-  animation:shine 5s ease-in-out infinite;
-}
-
-.line{
-  width:min(540px,80vw);
-  height:1px;
-  margin:24px auto;
-  background:linear-gradient(90deg,transparent,#b08a4d,transparent);
-}
-
 .small{
   color:#7b5a30;
   text-transform:uppercase;
   letter-spacing:.35em;
-  font-size:.75rem;
+  font-size:.72rem;
   font-weight:700;
   margin-bottom:18px;
 }
-
 h1{
   font-family:Georgia,"Times New Roman",serif;
   font-weight:400;
-  font-size:clamp(2.5rem,7vw,5rem);
+  font-size:clamp(2.4rem,7vw,5rem);
   letter-spacing:.18em;
   margin-bottom:20px;
 }
-
 p{
   color:#6f6860;
   font-size:1.05rem;
   line-height:1.7;
   margin-bottom:24px;
 }
-
 .tagline{
   text-transform:uppercase;
   letter-spacing:.22em;
@@ -90,7 +57,6 @@ p{
   font-weight:700;
   margin-bottom:30px;
 }
-
 .buttons{
   display:flex;
   gap:14px;
@@ -98,7 +64,6 @@ p{
   flex-wrap:wrap;
   margin-bottom:22px;
 }
-
 a.btn{
   text-decoration:none;
   color:#111;
@@ -110,27 +75,17 @@ a.btn{
   letter-spacing:.13em;
   font-size:.76rem;
   font-weight:800;
-  background:rgba(255,255,255,.35);
-  transition:.25s;
+  background:rgba(255,255,255,.25);
 }
-
-a.btn:hover{
-  background:#9d7741;
-  color:white;
-  transform:translateY(-2px);
-}
-
 .email{
   color:#6f6860;
   font-size:.95rem;
 }
-
 .email a{
   color:#73522c;
   font-weight:700;
   text-decoration:none;
 }
-
 footer{
   max-width:760px;
   margin:38px auto 0;
@@ -138,24 +93,10 @@ footer{
   font-size:.72rem;
   line-height:1.6;
 }
-
 @keyframes fadeIn{
-  from{opacity:0;transform:translateY(14px)}
-  to{opacity:1;transform:translateY(0)}
+  from{opacity:0}
+  to{opacity:1}
 }
-
-@keyframes shine{
-  0%,55%{left:-120%;opacity:0}
-  65%{opacity:1}
-  85%{left:140%;opacity:0}
-  100%{left:140%;opacity:0}
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0) scale(1)}
-  50%{transform:translateY(-6px) scale(1.01)}
-}
-
 @media(max-width:560px){
   body{padding:20px}
   .logo{width:94vw}
@@ -165,41 +106,27 @@ footer{
 }
 </style>
 </head>
-
 <body>
 <main class="wrap">
-
-  <div class="logo-box">
-    <img src="logo.png" alt="Pokémon Trading Centre logo" class="logo">
-  </div>
-
-  <div class="line"></div>
-
+  <img src="logo.png" alt="Pokémon Trading Centre logo" class="logo">
   <div class="small">Premium Pokémon Collecting</div>
-
   <h1>COMING SOON</h1>
-
   <p>
     A premium destination for Pokémon collectors.<br>
     Built for buying, selling, trading and connecting with the community.
   </p>
-
   <div class="tagline">Buy · Sell · Trade · Community</div>
-
   <div class="buttons">
     <a class="btn" href="https://www.instagram.com/pokemontradingcentre?igsh=MXVqNnI0a3RhM3pyMg%3D%3D&utm_source=qr" target="_blank">Instagram</a>
     <a class="btn" href="https://chat.whatsapp.com/EDZwFFDfSIx9vgJREUYHuh" target="_blank">Join WhatsApp</a>
   </div>
-
   <div class="email">
     Contact: <a href="mailto:info@pokemontradingcentre.com">info@pokemontradingcentre.com</a>
   </div>
-
   <footer>
     © 2026 Pokémon Trading Centre. Pokémon is a trademark of Nintendo, Game Freak and Creatures Inc.
     This website is independently operated and is not affiliated with or endorsed by The Pokémon Company.
   </footer>
-
 </main>
 </body>
 </html>
