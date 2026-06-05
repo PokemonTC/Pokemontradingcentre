@@ -1,196 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pokémon Trading Centre | Coming Soon</title>
-  <meta name="description" content="Pokémon Trading Centre is coming soon. A premium destination for Pokémon collectors to buy, sell, trade and join the community." />
+<title>Pokémon Trading Centre | Coming Soon</title>
+<meta name="description" content="Pokémon Trading Centre is coming soon. A premium destination for Pokémon collectors to buy, sell, trade and join the community.">
 
-  <style>
-    :root{
-      --bg:#f4f0eb;
-      --text:#111111;
-      --muted:#5f5a55;
-      --gold:#9b7440;
-      --gold-dark:#76572f;
-      --line:#c8b79c;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  background:radial-gradient(circle at top,#fffaf4 0%,#f4f0ea 55%,#e8dfd4 100%);
+  color:#111;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:28px;
+  text-align:center;
+}
 
-    body{
-      min-height:100vh;
-      font-family: "Times New Roman", Georgia, serif;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.95), rgba(244,240,235,0.92) 48%, rgba(232,225,217,0.95) 100%),
-        var(--bg);
-      color:var(--text);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px 18px;
-    }
+.wrap{
+  max-width:900px;
+  width:100%;
+  animation:fadeIn 1.4s ease both;
+}
 
-    .page{
-      width:100%;
-      max-width:900px;
-      text-align:center;
-      animation: fadeIn 1.2s ease both;
-    }
+.logo-box{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  animation:float 6s ease-in-out infinite;
+}
 
-    .logo{
-      width:min(560px, 92vw);
-      height:auto;
-      display:block;
-      margin:0 auto 22px;
-      filter: drop-shadow(0 18px 35px rgba(0,0,0,0.08));
-    }
+.logo{
+  width:min(500px,90vw);
+  display:block;
+  mix-blend-mode:multiply;
+}
 
-    .eyebrow{
-      font-family: Arial, Helvetica, sans-serif;
-      letter-spacing:0.42em;
-      text-transform:uppercase;
-      font-size:0.78rem;
-      color:var(--gold-dark);
-      margin-bottom:18px;
-      font-weight:600;
-    }
+.logo-box::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:60%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.7),transparent);
+  animation:shine 5s ease-in-out infinite;
+}
 
-    h1{
-      font-size:clamp(2.3rem, 7vw, 5.4rem);
-      letter-spacing:0.16em;
-      font-weight:400;
-      line-height:1;
-      margin-bottom:22px;
-    }
+.line{
+  width:min(540px,80vw);
+  height:1px;
+  margin:24px auto;
+  background:linear-gradient(90deg,transparent,#b08a4d,transparent);
+}
 
-    .sub{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:clamp(1rem, 2.5vw, 1.22rem);
-      line-height:1.7;
-      color:var(--muted);
-      max-width:650px;
-      margin:0 auto 34px;
-    }
+.small{
+  color:#7b5a30;
+  text-transform:uppercase;
+  letter-spacing:.35em;
+  font-size:.75rem;
+  font-weight:700;
+  margin-bottom:18px;
+}
 
-    .divider{
-      width:min(520px, 85vw);
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--line), transparent);
-      margin:0 auto 30px;
-    }
+h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(2.5rem,7vw,5rem);
+  letter-spacing:.18em;
+  margin-bottom:20px;
+}
 
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:14px;
-      margin-bottom:24px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+p{
+  color:#6f6860;
+  font-size:1.05rem;
+  line-height:1.7;
+  margin-bottom:24px;
+}
 
-    .btn{
-      min-width:210px;
-      text-decoration:none;
-      color:var(--text);
-      border:1px solid var(--gold);
-      padding:14px 24px;
-      border-radius:999px;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      font-size:0.78rem;
-      font-weight:700;
-      transition:all 0.25s ease;
-      background:rgba(255,255,255,0.25);
-    }
+.tagline{
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:.78rem;
+  font-weight:700;
+  margin-bottom:30px;
+}
 
-    .btn:hover{
-      background:var(--gold);
-      color:#fff;
-      transform:translateY(-2px);
-      box-shadow:0 12px 24px rgba(118,87,47,0.2);
-    }
+.buttons{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:22px;
+}
 
-    .email{
-      font-family: Arial, Helvetica, sans-serif;
-      margin-top:12px;
-      font-size:0.95rem;
-      color:var(--muted);
-    }
+a.btn{
+  text-decoration:none;
+  color:#111;
+  border:1px solid #9d7741;
+  border-radius:999px;
+  padding:14px 26px;
+  min-width:220px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:.76rem;
+  font-weight:800;
+  background:rgba(255,255,255,.35);
+  transition:.25s;
+}
 
-    .email a{
-      color:var(--gold-dark);
-      text-decoration:none;
-      font-weight:700;
-    }
+a.btn:hover{
+  background:#9d7741;
+  color:white;
+  transform:translateY(-2px);
+}
 
-    footer{
-      font-family: Arial, Helvetica, sans-serif;
-      max-width:720px;
-      margin:42px auto 0;
-      color:#8a8178;
-      font-size:0.74rem;
-      line-height:1.6;
-    }
+.email{
+  color:#6f6860;
+  font-size:.95rem;
+}
 
-    @keyframes fadeIn{
-      from{ opacity:0; transform:translateY(12px); }
-      to{ opacity:1; transform:translateY(0); }
-    }
+.email a{
+  color:#73522c;
+  font-weight:700;
+  text-decoration:none;
+}
 
-    @media (max-width:520px){
-      .logo{
-        width:96vw;
-      }
+footer{
+  max-width:760px;
+  margin:38px auto 0;
+  color:#8d847b;
+  font-size:.72rem;
+  line-height:1.6;
+}
 
-      .eyebrow{
-        letter-spacing:0.28em;
-      }
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-      h1{
-        letter-spacing:0.1em;
-      }
+@keyframes shine{
+  0%,55%{left:-120%;opacity:0}
+  65%{opacity:1}
+  85%{left:140%;opacity:0}
+  100%{left:140%;opacity:0}
+}
 
-      .btn{
-        width:100%;
-      }
-    }
-  </style>
+@keyframes float{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-6px) scale(1.01)}
+}
+
+@media(max-width:560px){
+  body{padding:20px}
+  .logo{width:94vw}
+  h1{letter-spacing:.1em}
+  .small,.tagline{letter-spacing:.16em}
+  a.btn{width:100%}
+}
+</style>
 </head>
 
 <body>
-  <main class="page">
-    <img src="logo.png" alt="Pokémon Trading Centre logo" class="logo" />
+<main class="wrap">
 
-    <div class="eyebrow">Premium Pokémon Collecting</div>
+  <div class="logo-box">
+    <img src="logo.png" alt="Pokémon Trading Centre logo" class="logo">
+  </div>
 
-    <h1>COMING SOON</h1>
+  <div class="line"></div>
 
-    <p class="sub">
-      A premium destination for Pokémon collectors.<br />
-      Buy · Sell · Trade · Community
-    </p>
+  <div class="small">Premium Pokémon Collecting</div>
 
-    <div class="divider"></div>
+  <h1>COMING SOON</h1>
 
-    <div class="actions">
-      <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram: Pokémon TC</a>
-      <a class="btn" href="https://chat.whatsapp.com/EDZwFFDfSIx9vgJREUYHuh" target="_blank" rel="noopener">Join WhatsApp</a>
-    </div>
+  <p>
+    A premium destination for Pokémon collectors.<br>
+    Built for buying, selling, trading and connecting with the community.
+  </p>
 
-    <div class="email">
-      Contact: <a href="mailto:info@pokemontradingcentre.com">info@pokemontradingcentre.com</a>
-    </div>
+  <div class="tagline">Buy · Sell · Trade · Community</div>
 
-    <footer>
-      © 2026 Pokémon Trading Centre. Pokémon is a trademark of Nintendo, Game Freak and Creatures Inc.
-      This website is independently operated and is not affiliated with or endorsed by The Pokémon Company.
-    </footer>
-  </main>
+  <div class="buttons">
+    <a class="btn" href="https://www.instagram.com/pokemontradingcentre?igsh=MXVqNnI0a3RhM3pyMg%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+    <a class="btn" href="https://chat.whatsapp.com/EDZwFFDfSIx9vgJREUYHuh" target="_blank">Join WhatsApp</a>
+  </div>
+
+  <div class="email">
+    Contact: <a href="mailto:info@pokemontradingcentre.com">info@pokemontradingcentre.com</a>
+  </div>
+
+  <footer>
+    © 2026 Pokémon Trading Centre. Pokémon is a trademark of Nintendo, Game Freak and Creatures Inc.
+    This website is independently operated and is not affiliated with or endorsed by The Pokémon Company.
+  </footer>
+
+</main>
 </body>
 </html>
